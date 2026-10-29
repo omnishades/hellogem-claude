@@ -1,0 +1,28 @@
+{
+  "name": "hellogem",
+  "displayName": "HelloGem",
+  "version": "0.1.0",
+  "description": "Explains one cosmetic ingredient at a time: what it is, what it does and who says so. Uses HelloGem's read-only service, which returns source-attributed statements: CosIng cosmetic functions and definitions, ChEBI chemical roles, and descriptions from named brand, editorial and industry sources.",
+  "author": {
+    "name": "Omnishades Worldwide LTD",
+    "email": "anselme@omnishades.com",
+    "url": "https://hellogem.ai/"
+  },
+  "homepage": "https://hellogem.ai/",
+  "repository": "https://github.com/omnishades/hellogem-claude",
+  "license": "MIT",
+  "keywords": [
+    "ingredients",
+    "cosmetics",
+    "skincare",
+    "INCI",
+    "ingredient label",
+    "cosmetic chemistry",
+    "sources"
+  ],
+  "documentationUrl": "https://github.com/omnishades/hellogem-claude#readme",
+  "supportUrl": "https://api.hellogem.ai/support",
+  "privacyPolicyUrl": "https://api.hellogem.ai/privacy",
+  "termsOfServiceUrl": "https://api.hellogem.ai/terms",
+  "icon": "./assets/icon.png"
+}

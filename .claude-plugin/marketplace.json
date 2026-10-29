@@ -1,0 +1,15 @@
+{
+  "name": "hellogem",
+  "description": "HelloGem for Claude, published by Omnishades Worldwide LTD.",
+  "owner": {
+    "name": "Omnishades Worldwide LTD",
+    "email": "anselme@omnishades.com",
+    "url": "https://hellogem.ai/"
+  },
+  "plugins": [
+    {
+      "name": "hellogem",
+      "source": "./"
+    }
+  ]
+}

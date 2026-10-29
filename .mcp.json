@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hellogem": {
+      "type": "http",
+      "url": "https://api.hellogem.ai/mcp"
+    }
+  }
+}
