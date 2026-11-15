@@ -4,18 +4,20 @@ Know what a cosmetic ingredient is, what it does, and who says so.
 
 Ask Claude about a name on a cosmetic ingredient label, by its INCI, common or chemical name. Claude looks it up with HelloGem and answers in plain words. HelloGem returns source-attributed statements, each with its source and link:
 
-- cosmetic functions and short definitions from CosIng, the EU's cosmetic ingredient database;
+- cosmetic functions and short ingredient definitions from CosIng, the EU's cosmetic ingredient database, with CosIng's general meaning of each function;
 - chemical roles from ChEBI, a chemistry reference, and roles HelloGem infers from cosmetic functions, labelled as inferences;
-- descriptions from skincare brands, an editorial ingredient website and an industry reference, credited to whichever source said them.
+- short excerpts from skincare brands, an editorial ingredient website and an industry reference, credited to whichever source said them and linked to the full page.
 
-The plugin's skill asks Claude to keep each statement with its source, so you can see who says what. Coverage varies: some ingredients have several sources, some have one or none.
+The plugin's skill asks Claude to answer in one plain explanation and list the sources it used, with their links, below it. Ask who says what and Claude compares the sources by name. Coverage varies: some ingredients have several sources, some have one or none.
+
+HelloGem's promise is what it returns: every statement with its source, and nothing filled in where the sources are silent. The wording is Claude's, so if an answer says more than its sources, report it.
 
 HelloGem explains ingredients. It doesn't judge safety, give medical advice, suggest concentrations, review formulas or certify regulatory status.
 
 ## What's in this plugin
 
 - A connection to HelloGem's hosted, read-only service at `https://api.hellogem.ai/mcp`, with two tools: `search_ingredients` and `get_ingredient`. You don't need a HelloGem account or API key, only a Claude plan that lets you add plugins.
-- One skill, `explain-ingredient`, which tells Claude how to answer: lead with what you asked, say who says what, keep a definition (what an ingredient is) apart from a function (what it does), and treat a related term as another name only when HelloGem confirms it's the same ingredient.
+- One skill, `explain-ingredient`, which tells Claude how to answer: lead with what you asked, write one explanation without overstating any source, list the sources used below it, keep a definition (what an ingredient is) apart from a function (what it does), and treat a related term as another name only when HelloGem confirms it's the same ingredient.
 
 There are no hooks, commands, agents or scripts.
 
@@ -23,7 +25,7 @@ There are no hooks, commands, agents or scripts.
 
 **Claude apps (web and desktop)**
 
-1. Download `hellogem-0.1.0.zip` from this repository's [latest release](https://github.com/omnishades/hellogem-claude/releases/latest).
+1. Download `hellogem-0.1.1.zip` from this repository's [latest release](https://github.com/omnishades/hellogem-claude/releases/latest).
 2. In Claude, go to **Customize > Plugins**, select **Add**, then **Upload plugin**, and choose the ZIP.
 3. Open HelloGem, go to its **Connectors** tab and connect **hellogem**. It doesn't ask you to sign in.
 
@@ -44,12 +46,13 @@ Claude Code connects to HelloGem directly. Start a new session after installing.
 
 ## Try it
 
-- "What does glycerin do in skincare? Show who says what."
+- "What does glycerin do in skincare?"
 - "What is Nonapeptide-9 on an ingredient label?"
 - "Is nicotinamide the same ingredient as niacinamide?"
-- "What is tocopherol, and who says so?"
+- "What is tocopherol on an ingredient label?"
+- "How do different sources describe niacinamide?"
 
-Names are matched exactly as written. If a name isn't listed, the skill tells Claude to say so rather than guess. When several ingredients match, Claude shows them and asks which you mean.
+Names are matched exactly as written. If a name isn't listed, the skill tells Claude to say so rather than guess. When several separate entries share a name, it asks Claude to answer once if they agree on your question, and to ask which you mean only when they differ in a way you can tell apart.
 
 ## What is sent and stored
 
@@ -57,7 +60,7 @@ When Claude uses a HelloGem tool, it sends HelloGem the ingredient name or ID, a
 
 ## Reporting a problem
 
-Each HelloGem result comes with its own report link, and the skill asks Claude to end its answer with it as **Report an issue**. Your report is tied to that exact request and result. Claude's wording isn't included, so if the wording is the problem, paste that part into your report.
+Each HelloGem result comes with its own report link, and the skill asks Claude to end its answer with it as **Report an issue**, after the sources. Your report is tied to that exact request and result. Claude's wording isn't included, so if the wording is the problem, paste that part into your report.
 
 ## Links
 
